@@ -1,0 +1,9 @@
+README.rst
+./pyhog_example.ipynb
+./pyhog/features_pedro_py.cc
+pyhog/__init__.py
+pyhog/pyhog.py
+pyhog.egg-info/PKG-INFO
+pyhog.egg-info/SOURCES.txt
+pyhog.egg-info/dependency_links.txt
+pyhog.egg-info/top_level.txt
