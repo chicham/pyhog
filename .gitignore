@@ -57,3 +57,4 @@ changelog.txt
 cscope.*
 pyhog.egg-info
 build
+pyhog_example.ipynb
