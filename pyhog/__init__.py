@@ -13,8 +13,8 @@ except ImportError:
 
 
 def features_pedro(img, sbin):
-    hogf = features_pedro_py.process(np.asfortranarray(img), sbin)
-    return np.ascontiguousarray(hogf)
+    hogf = features_pedro_py.process(img.copy('F'), sbin)
+    return hogf
 
 
 def hog_picture(w, bs=20):
