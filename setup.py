@@ -10,6 +10,4 @@ setup(name='pyhog',
                                                  '-msse2', '-DNUMPYCHECK',
                                                  '-DNDEBUG', '-fPIC'],
                              sources=['./pyhog/features_pedro_py.cc'])],
-      include_dirs=[np.get_include()],
-      scripts=['./pyhog_example.ipynb'])
-
+      include_dirs=[np.get_include()])
