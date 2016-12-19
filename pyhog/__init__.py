@@ -13,8 +13,7 @@ except ImportError:
 
 
 def features_pedro(img, sbin):
-    hogf = features_pedro_py.process(img.copy('F'), sbin)
-    return hogf
+    return features_pedro_py.process(img.copy('F'), sbin)
 
 
 def hog_picture(w, bs=20):
