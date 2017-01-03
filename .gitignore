@@ -58,3 +58,5 @@ cscope.*
 pyhog.egg-info
 build
 pyhog_example.ipynb
+.idea
+cmake-build-debug
