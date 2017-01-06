@@ -16,8 +16,8 @@ extensions = [
               ]
 
 setup(name='pyhog',
-      version='1.1.a',
-      author='',
+      version='1.1',
+      author='hicham randrianarivo',
       packages=find_packages(),
       ext_modules=cythonize(extensions),
       include_dirs=[np.get_include()])
