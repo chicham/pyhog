@@ -63,3 +63,6 @@ cmake-build-debug
 fh.jpg
 pyhog.so
 test
+GPATH
+GRTAGS
+GTAGS
