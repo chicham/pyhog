@@ -4,7 +4,7 @@
 {
     "distutils": {
         "depends": [
-            "pyhog/pyhog_impl.hpp"
+            "cpp/hog.hpp"
         ], 
         "extra_compile_args": [
             "-std=c++14", 
@@ -12,7 +12,7 @@
         ], 
         "language": "c++"
     }, 
-    "module_name": "pyhog.pyhog"
+    "module_name": "pyhog.feature"
 }
 END: Cython Metadata */
 
@@ -457,8 +457,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__pyhog__pyhog
-#define __PYX_HAVE_API__pyhog__pyhog
+#define __PYX_HAVE__pyhog__feature
+#define __PYX_HAVE_API__pyhog__feature
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -470,7 +470,7 @@ static CYTHON_INLINE float __PYX_NAN() {
 #include "stdexcept"
 #include "typeinfo"
 #include <memory>
-#include "pyhog_impl.hpp"
+#include "../cpp/hog.hpp"
 #include "pythread.h"
 #include "pystate.h"
 #ifdef _OPENMP
@@ -690,7 +690,7 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "pyhog/pyhog.pyx",
+  "pyhog/feature.pyx",
   "__init__.pxd",
   "stringsource",
   "type.pxd",
@@ -1045,16 +1045,16 @@ typedef npy_clongdouble __pyx_t_5numpy_clongdouble_t;
  * cdef inline object PyArray_MultiIterNew1(a):
  */
 typedef npy_cdouble __pyx_t_5numpy_complex_t;
-struct __pyx_opt_args_5pyhog_5pyhog_hog_feature;
+struct __pyx_opt_args_5pyhog_7feature_hog;
 
-/* "pyhog/pyhog.pyx":18
+/* "pyhog/feature.pyx":18
  * 
  * 
- * cpdef np.ndarray[np.float, ndim=3] hog_feature(double[:, :, :] im, int sbin=4):             # <<<<<<<<<<<<<<
- *     shape = im.shape
- *     cdef double[:, :, :] im_f = im.copy_fortran()
+ * cpdef np.ndarray[np.float, ndim=3] hog(double[:, :, :] im, int sbin=4):             # <<<<<<<<<<<<<<
+ *     cdef int rows = im.shape[0]
+ *     cdef int cols = im.shape[1]
  */
-struct __pyx_opt_args_5pyhog_5pyhog_hog_feature {
+struct __pyx_opt_args_5pyhog_7feature_hog {
   int __pyx_n;
   int sbin;
 };
@@ -1891,7 +1891,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *, cha
 
 /* Module declarations from 'libcpp.memory' */
 
-/* Module declarations from 'pyhog.pyhog' */
+/* Module declarations from 'pyhog.feature' */
 static PyTypeObject *__pyx_array_type = 0;
 static PyTypeObject *__pyx_MemviewEnum_type = 0;
 static PyTypeObject *__pyx_memoryview_type = 0;
@@ -1903,7 +1903,7 @@ static PyObject *contiguous = 0;
 static PyObject *indirect_contiguous = 0;
 static int __pyx_memoryview_thread_locks_used;
 static PyThread_type_lock __pyx_memoryview_thread_locks[8];
-static PyArrayObject *__pyx_f_5pyhog_5pyhog_hog_feature(__Pyx_memviewslice, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyhog_5pyhog_hog_feature *__pyx_optional_args); /*proto*/
+static PyArrayObject *__pyx_f_5pyhog_7feature_hog(__Pyx_memviewslice, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyhog_7feature_hog *__pyx_optional_args); /*proto*/
 static struct __pyx_array_obj *__pyx_array_new(PyObject *, Py_ssize_t, char *, char *, char *); /*proto*/
 static void *__pyx_align_pointer(void *, size_t); /*proto*/
 static PyObject *__pyx_memoryview_new(PyObject *, int, int, __Pyx_TypeInfo *); /*proto*/
@@ -1938,10 +1938,10 @@ static void __pyx_memoryview_slice_assign_scalar(__Pyx_memviewslice *, int, size
 static void __pyx_memoryview__slice_assign_scalar(char *, Py_ssize_t *, Py_ssize_t *, int, size_t, void *); /*proto*/
 static PyObject *__pyx_format_from_typeinfo(__Pyx_TypeInfo *); /*proto*/
 static __Pyx_TypeInfo __Pyx_TypeInfo_double = { "double", NULL, sizeof(double), { 0 }, 0, 'R', 0, 0 };
-#define __Pyx_MODULE_NAME "pyhog.pyhog"
-int __pyx_module_is_main_pyhog__pyhog = 0;
+#define __Pyx_MODULE_NAME "pyhog.feature"
+int __pyx_module_is_main_pyhog__feature = 0;
 
-/* Implementation of 'pyhog.pyhog' */
+/* Implementation of 'pyhog.feature' */
 static PyObject *__pyx_builtin_ValueError;
 static PyObject *__pyx_builtin_range;
 static PyObject *__pyx_builtin_RuntimeError;
@@ -2120,7 +2120,7 @@ static PyObject *__pyx_kp_s_unable_to_allocate_array_data;
 static PyObject *__pyx_kp_s_unable_to_allocate_shape_and_str;
 static PyObject *__pyx_kp_u_unknown_dtype_code_in_numpy_pxd;
 static PyObject *__pyx_n_s_unpack;
-static PyObject *__pyx_pf_5pyhog_5pyhog_hog_feature(CYTHON_UNUSED PyObject *__pyx_self, __Pyx_memviewslice __pyx_v_im, int __pyx_v_sbin); /* proto */
+static PyObject *__pyx_pf_5pyhog_7feature_hog(CYTHON_UNUSED PyObject *__pyx_self, __Pyx_memviewslice __pyx_v_im, int __pyx_v_sbin); /* proto */
 static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, Py_buffer *__pyx_v_info, int __pyx_v_flags); /* proto */
 static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_self, Py_buffer *__pyx_v_info); /* proto */
 static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __pyx_array_obj *__pyx_v_self, PyObject *__pyx_v_shape, Py_ssize_t __pyx_v_itemsize, PyObject *__pyx_v_format, PyObject *__pyx_v_mode, int __pyx_v_allocate_buffer); /* proto */
@@ -2190,212 +2190,230 @@ static PyObject *__pyx_tuple__30;
 static PyObject *__pyx_tuple__31;
 static PyObject *__pyx_tuple__32;
 
-/* "pyhog/pyhog.pyx":18
+/* "pyhog/feature.pyx":18
  * 
  * 
- * cpdef np.ndarray[np.float, ndim=3] hog_feature(double[:, :, :] im, int sbin=4):             # <<<<<<<<<<<<<<
- *     shape = im.shape
- *     cdef double[:, :, :] im_f = im.copy_fortran()
+ * cpdef np.ndarray[np.float, ndim=3] hog(double[:, :, :] im, int sbin=4):             # <<<<<<<<<<<<<<
+ *     cdef int rows = im.shape[0]
+ *     cdef int cols = im.shape[1]
  */
 
-static PyObject *__pyx_pw_5pyhog_5pyhog_1hog_feature(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyArrayObject *__pyx_f_5pyhog_5pyhog_hog_feature(__Pyx_memviewslice __pyx_v_im, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_5pyhog_5pyhog_hog_feature *__pyx_optional_args) {
+static PyObject *__pyx_pw_5pyhog_7feature_1hog(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyArrayObject *__pyx_f_5pyhog_7feature_hog(__Pyx_memviewslice __pyx_v_im, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_5pyhog_7feature_hog *__pyx_optional_args) {
   int __pyx_v_sbin = ((int)4);
-  Py_ssize_t *__pyx_v_shape;
+  int __pyx_v_rows;
+  int __pyx_v_cols;
+  int __pyx_v_size;
   __Pyx_memviewslice __pyx_v_im_f = { 0, 0, { 0 }, { 0 }, { 0 } };
   FeatureVector __pyx_v_feat;
   __Pyx_memviewslice __pyx_v_out = { 0, 0, { 0 }, { 0 }, { 0 } };
   PyArrayObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
-  Py_ssize_t *__pyx_t_1;
-  __Pyx_memviewslice __pyx_t_2 = { 0, 0, { 0 }, { 0 }, { 0 } };
+  __Pyx_memviewslice __pyx_t_1 = { 0, 0, { 0 }, { 0 }, { 0 } };
+  Py_ssize_t __pyx_t_2;
   Py_ssize_t __pyx_t_3;
   Py_ssize_t __pyx_t_4;
-  Py_ssize_t __pyx_t_5;
-  int __pyx_t_6;
-  double *__pyx_t_7;
-  struct __pyx_array_obj *__pyx_t_8 = NULL;
+  int __pyx_t_5;
+  double *__pyx_t_6;
+  struct __pyx_array_obj *__pyx_t_7 = NULL;
+  PyObject *__pyx_t_8 = NULL;
   PyObject *__pyx_t_9 = NULL;
-  PyObject *__pyx_t_10 = NULL;
-  __Pyx_memviewslice __pyx_t_11 = { 0, 0, { 0 }, { 0 }, { 0 } };
-  PyObject *__pyx_t_12 = NULL;
-  __Pyx_memviewslice __pyx_t_13 = { 0, 0, { 0 }, { 0 }, { 0 } };
+  __Pyx_memviewslice __pyx_t_10 = { 0, 0, { 0 }, { 0 }, { 0 } };
+  PyObject *__pyx_t_11 = NULL;
+  __Pyx_memviewslice __pyx_t_12 = { 0, 0, { 0 }, { 0 }, { 0 } };
+  PyObject *__pyx_t_13 = NULL;
   PyObject *__pyx_t_14 = NULL;
-  PyObject *__pyx_t_15 = NULL;
-  __Pyx_RefNannySetupContext("hog_feature", 0);
+  __Pyx_RefNannySetupContext("hog", 0);
   if (__pyx_optional_args) {
     if (__pyx_optional_args->__pyx_n > 0) {
       __pyx_v_sbin = __pyx_optional_args->sbin;
     }
   }
 
-  /* "pyhog/pyhog.pyx":19
+  /* "pyhog/feature.pyx":19
  * 
- * cpdef np.ndarray[np.float, ndim=3] hog_feature(double[:, :, :] im, int sbin=4):
- *     shape = im.shape             # <<<<<<<<<<<<<<
- *     cdef double[:, :, :] im_f = im.copy_fortran()
- *     cdef FeatureVector feat = process(<double*>&im_f[0,0,0], shape[0], shape[1], shape[2], sbin)
+ * cpdef np.ndarray[np.float, ndim=3] hog(double[:, :, :] im, int sbin=4):
+ *     cdef int rows = im.shape[0]             # <<<<<<<<<<<<<<
+ *     cdef int cols = im.shape[1]
+ *     cdef int size = im.shape[2]
  */
-  __pyx_t_1 = __pyx_v_im.shape;
-  __pyx_v_shape = __pyx_t_1;
+  __pyx_v_rows = (__pyx_v_im.shape[0]);
 
-  /* "pyhog/pyhog.pyx":20
- * cpdef np.ndarray[np.float, ndim=3] hog_feature(double[:, :, :] im, int sbin=4):
- *     shape = im.shape
+  /* "pyhog/feature.pyx":20
+ * cpdef np.ndarray[np.float, ndim=3] hog(double[:, :, :] im, int sbin=4):
+ *     cdef int rows = im.shape[0]
+ *     cdef int cols = im.shape[1]             # <<<<<<<<<<<<<<
+ *     cdef int size = im.shape[2]
+ *     cdef double[:, :, :] im_f = im.copy_fortran()
+ */
+  __pyx_v_cols = (__pyx_v_im.shape[1]);
+
+  /* "pyhog/feature.pyx":21
+ *     cdef int rows = im.shape[0]
+ *     cdef int cols = im.shape[1]
+ *     cdef int size = im.shape[2]             # <<<<<<<<<<<<<<
+ *     cdef double[:, :, :] im_f = im.copy_fortran()
+ *     cdef FeatureVector feat = process(<double*>&im_f[0,0,0], rows, cols, size, sbin)
+ */
+  __pyx_v_size = (__pyx_v_im.shape[2]);
+
+  /* "pyhog/feature.pyx":22
+ *     cdef int cols = im.shape[1]
+ *     cdef int size = im.shape[2]
  *     cdef double[:, :, :] im_f = im.copy_fortran()             # <<<<<<<<<<<<<<
- *     cdef FeatureVector feat = process(<double*>&im_f[0,0,0], shape[0], shape[1], shape[2], sbin)
+ *     cdef FeatureVector feat = process(<double*>&im_f[0,0,0], rows, cols, size, sbin)
  *     cdef double[:, :, :] out = <double[:feat.rows:1, :feat.cols, :feat.size]>feat.data.data()
  */
-  __pyx_t_2 = __pyx_memoryview_copy_slice_dcd_d__double_f(__pyx_v_im); if (unlikely(!__pyx_t_2.memview)) __PYX_ERR(0, 20, __pyx_L1_error)
-  __pyx_v_im_f = __pyx_t_2;
-  __pyx_t_2.memview = NULL;
-  __pyx_t_2.data = NULL;
+  __pyx_t_1 = __pyx_memoryview_copy_slice_dcd_d__double_f(__pyx_v_im); if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 22, __pyx_L1_error)
+  __pyx_v_im_f = __pyx_t_1;
+  __pyx_t_1.memview = NULL;
+  __pyx_t_1.data = NULL;
 
-  /* "pyhog/pyhog.pyx":21
- *     shape = im.shape
+  /* "pyhog/feature.pyx":23
+ *     cdef int size = im.shape[2]
  *     cdef double[:, :, :] im_f = im.copy_fortran()
- *     cdef FeatureVector feat = process(<double*>&im_f[0,0,0], shape[0], shape[1], shape[2], sbin)             # <<<<<<<<<<<<<<
+ *     cdef FeatureVector feat = process(<double*>&im_f[0,0,0], rows, cols, size, sbin)             # <<<<<<<<<<<<<<
  *     cdef double[:, :, :] out = <double[:feat.rows:1, :feat.cols, :feat.size]>feat.data.data()
  *     return np.asarray(out.copy())
  */
+  __pyx_t_2 = 0;
   __pyx_t_3 = 0;
   __pyx_t_4 = 0;
-  __pyx_t_5 = 0;
-  __pyx_t_6 = -1;
+  __pyx_t_5 = -1;
+  if (__pyx_t_2 < 0) {
+    __pyx_t_2 += __pyx_v_im_f.shape[0];
+    if (unlikely(__pyx_t_2 < 0)) __pyx_t_5 = 0;
+  } else if (unlikely(__pyx_t_2 >= __pyx_v_im_f.shape[0])) __pyx_t_5 = 0;
   if (__pyx_t_3 < 0) {
-    __pyx_t_3 += __pyx_v_im_f.shape[0];
-    if (unlikely(__pyx_t_3 < 0)) __pyx_t_6 = 0;
-  } else if (unlikely(__pyx_t_3 >= __pyx_v_im_f.shape[0])) __pyx_t_6 = 0;
+    __pyx_t_3 += __pyx_v_im_f.shape[1];
+    if (unlikely(__pyx_t_3 < 0)) __pyx_t_5 = 1;
+  } else if (unlikely(__pyx_t_3 >= __pyx_v_im_f.shape[1])) __pyx_t_5 = 1;
   if (__pyx_t_4 < 0) {
-    __pyx_t_4 += __pyx_v_im_f.shape[1];
-    if (unlikely(__pyx_t_4 < 0)) __pyx_t_6 = 1;
-  } else if (unlikely(__pyx_t_4 >= __pyx_v_im_f.shape[1])) __pyx_t_6 = 1;
-  if (__pyx_t_5 < 0) {
-    __pyx_t_5 += __pyx_v_im_f.shape[2];
-    if (unlikely(__pyx_t_5 < 0)) __pyx_t_6 = 2;
-  } else if (unlikely(__pyx_t_5 >= __pyx_v_im_f.shape[2])) __pyx_t_6 = 2;
-  if (unlikely(__pyx_t_6 != -1)) {
-    __Pyx_RaiseBufferIndexError(__pyx_t_6);
-    __PYX_ERR(0, 21, __pyx_L1_error)
+    __pyx_t_4 += __pyx_v_im_f.shape[2];
+    if (unlikely(__pyx_t_4 < 0)) __pyx_t_5 = 2;
+  } else if (unlikely(__pyx_t_4 >= __pyx_v_im_f.shape[2])) __pyx_t_5 = 2;
+  if (unlikely(__pyx_t_5 != -1)) {
+    __Pyx_RaiseBufferIndexError(__pyx_t_5);
+    __PYX_ERR(0, 23, __pyx_L1_error)
   }
-  __pyx_v_feat = process(((double *)(&(*((double *) ( /* dim=2 */ (( /* dim=1 */ (( /* dim=0 */ (__pyx_v_im_f.data + __pyx_t_3 * __pyx_v_im_f.strides[0]) ) + __pyx_t_4 * __pyx_v_im_f.strides[1]) ) + __pyx_t_5 * __pyx_v_im_f.strides[2]) ))))), (__pyx_v_shape[0]), (__pyx_v_shape[1]), (__pyx_v_shape[2]), __pyx_v_sbin);
+  __pyx_v_feat = process(((double *)(&(*((double *) ( /* dim=2 */ (( /* dim=1 */ (( /* dim=0 */ (__pyx_v_im_f.data + __pyx_t_2 * __pyx_v_im_f.strides[0]) ) + __pyx_t_3 * __pyx_v_im_f.strides[1]) ) + __pyx_t_4 * __pyx_v_im_f.strides[2]) ))))), __pyx_v_rows, __pyx_v_cols, __pyx_v_size, __pyx_v_sbin);
 
-  /* "pyhog/pyhog.pyx":22
+  /* "pyhog/feature.pyx":24
  *     cdef double[:, :, :] im_f = im.copy_fortran()
- *     cdef FeatureVector feat = process(<double*>&im_f[0,0,0], shape[0], shape[1], shape[2], sbin)
+ *     cdef FeatureVector feat = process(<double*>&im_f[0,0,0], rows, cols, size, sbin)
  *     cdef double[:, :, :] out = <double[:feat.rows:1, :feat.cols, :feat.size]>feat.data.data()             # <<<<<<<<<<<<<<
  *     return np.asarray(out.copy())
  */
-  __pyx_t_7 = __pyx_v_feat.data.data();
-  if (!__pyx_t_7) {
+  __pyx_t_6 = __pyx_v_feat.data.data();
+  if (!__pyx_t_6) {
     PyErr_SetString(PyExc_ValueError,"Cannot create cython.array from NULL pointer");
-    __PYX_ERR(0, 22, __pyx_L1_error)
+    __PYX_ERR(0, 24, __pyx_L1_error)
   }
-  __pyx_t_10 = __pyx_format_from_typeinfo(&__Pyx_TypeInfo_double);
-  __pyx_t_9 = Py_BuildValue((char*) "("  __PYX_BUILD_PY_SSIZE_T  __PYX_BUILD_PY_SSIZE_T  __PYX_BUILD_PY_SSIZE_T  ")", ((Py_ssize_t)__pyx_v_feat.rows), ((Py_ssize_t)__pyx_v_feat.cols), ((Py_ssize_t)__pyx_v_feat.size));
-  if (unlikely(!__pyx_t_10 || !__pyx_t_9 || !PyBytes_AsString(__pyx_t_10))) __PYX_ERR(0, 22, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_10);
+  __pyx_t_9 = __pyx_format_from_typeinfo(&__Pyx_TypeInfo_double);
+  __pyx_t_8 = Py_BuildValue((char*) "("  __PYX_BUILD_PY_SSIZE_T  __PYX_BUILD_PY_SSIZE_T  __PYX_BUILD_PY_SSIZE_T  ")", ((Py_ssize_t)__pyx_v_feat.rows), ((Py_ssize_t)__pyx_v_feat.cols), ((Py_ssize_t)__pyx_v_feat.size));
+  if (unlikely(!__pyx_t_9 || !__pyx_t_8 || !PyBytes_AsString(__pyx_t_9))) __PYX_ERR(0, 24, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
-  __pyx_t_8 = __pyx_array_new(__pyx_t_9, sizeof(double), PyBytes_AS_STRING(__pyx_t_10), (char *) "fortran", (char *) __pyx_t_7);
-  if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 22, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
+  __pyx_t_7 = __pyx_array_new(__pyx_t_8, sizeof(double), PyBytes_AS_STRING(__pyx_t_9), (char *) "fortran", (char *) __pyx_t_6);
+  if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 24, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_7);
+  __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-  __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-  __pyx_t_11 = __Pyx_PyObject_to_MemoryviewSlice_dsdsds_double(((PyObject *)__pyx_t_8));
-  if (unlikely(!__pyx_t_11.memview)) __PYX_ERR(0, 22, __pyx_L1_error)
-  __Pyx_DECREF(((PyObject *)__pyx_t_8)); __pyx_t_8 = 0;
-  __pyx_v_out = __pyx_t_11;
-  __pyx_t_11.memview = NULL;
-  __pyx_t_11.data = NULL;
+  __pyx_t_10 = __Pyx_PyObject_to_MemoryviewSlice_dsdsds_double(((PyObject *)__pyx_t_7));
+  if (unlikely(!__pyx_t_10.memview)) __PYX_ERR(0, 24, __pyx_L1_error)
+  __Pyx_DECREF(((PyObject *)__pyx_t_7)); __pyx_t_7 = 0;
+  __pyx_v_out = __pyx_t_10;
+  __pyx_t_10.memview = NULL;
+  __pyx_t_10.data = NULL;
 
-  /* "pyhog/pyhog.pyx":23
- *     cdef FeatureVector feat = process(<double*>&im_f[0,0,0], shape[0], shape[1], shape[2], sbin)
+  /* "pyhog/feature.pyx":25
+ *     cdef FeatureVector feat = process(<double*>&im_f[0,0,0], rows, cols, size, sbin)
  *     cdef double[:, :, :] out = <double[:feat.rows:1, :feat.cols, :feat.size]>feat.data.data()
  *     return np.asarray(out.copy())             # <<<<<<<<<<<<<<
  */
   __Pyx_XDECREF(((PyObject *)__pyx_r));
-  __pyx_t_9 = __Pyx_GetModuleGlobalName(__pyx_n_s_np); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 23, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_9);
-  __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_asarray); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 23, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_12);
-  __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-  __pyx_t_13 = __pyx_memoryview_copy_slice_d_d_dc_double_c(__pyx_v_out); if (unlikely(!__pyx_t_13.memview)) __PYX_ERR(0, 23, __pyx_L1_error)
-  __pyx_t_9 = __pyx_memoryview_fromslice(__pyx_t_13, 3, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 23, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_9);
-  __PYX_XDEC_MEMVIEW(&__pyx_t_13, 1);
-  __pyx_t_13.memview = NULL;
-  __pyx_t_13.data = NULL;
-  __pyx_t_14 = NULL;
-  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_12))) {
-    __pyx_t_14 = PyMethod_GET_SELF(__pyx_t_12);
-    if (likely(__pyx_t_14)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_12);
-      __Pyx_INCREF(__pyx_t_14);
+  __pyx_t_8 = __Pyx_GetModuleGlobalName(__pyx_n_s_np); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_8);
+  __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_asarray); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_11);
+  __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+  __pyx_t_12 = __pyx_memoryview_copy_slice_d_d_dc_double_c(__pyx_v_out); if (unlikely(!__pyx_t_12.memview)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __pyx_t_8 = __pyx_memoryview_fromslice(__pyx_t_12, 3, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_8);
+  __PYX_XDEC_MEMVIEW(&__pyx_t_12, 1);
+  __pyx_t_12.memview = NULL;
+  __pyx_t_12.data = NULL;
+  __pyx_t_13 = NULL;
+  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_11))) {
+    __pyx_t_13 = PyMethod_GET_SELF(__pyx_t_11);
+    if (likely(__pyx_t_13)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_11);
+      __Pyx_INCREF(__pyx_t_13);
       __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_12, function);
+      __Pyx_DECREF_SET(__pyx_t_11, function);
     }
   }
-  if (!__pyx_t_14) {
-    __pyx_t_10 = __Pyx_PyObject_CallOneArg(__pyx_t_12, __pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 23, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __Pyx_GOTREF(__pyx_t_10);
+  if (!__pyx_t_13) {
+    __pyx_t_9 = __Pyx_PyObject_CallOneArg(__pyx_t_11, __pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 25, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+    __Pyx_GOTREF(__pyx_t_9);
   } else {
     #if CYTHON_FAST_PYCALL
-    if (PyFunction_Check(__pyx_t_12)) {
-      PyObject *__pyx_temp[2] = {__pyx_t_14, __pyx_t_9};
-      __pyx_t_10 = __Pyx_PyFunction_FastCall(__pyx_t_12, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 23, __pyx_L1_error)
-      __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
-      __Pyx_GOTREF(__pyx_t_10);
-      __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+    if (PyFunction_Check(__pyx_t_11)) {
+      PyObject *__pyx_temp[2] = {__pyx_t_13, __pyx_t_8};
+      __pyx_t_9 = __Pyx_PyFunction_FastCall(__pyx_t_11, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 25, __pyx_L1_error)
+      __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
+      __Pyx_GOTREF(__pyx_t_9);
+      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     } else
     #endif
     #if CYTHON_FAST_PYCCALL
-    if (__Pyx_PyFastCFunction_Check(__pyx_t_12)) {
-      PyObject *__pyx_temp[2] = {__pyx_t_14, __pyx_t_9};
-      __pyx_t_10 = __Pyx_PyCFunction_FastCall(__pyx_t_12, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 23, __pyx_L1_error)
-      __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
-      __Pyx_GOTREF(__pyx_t_10);
-      __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+    if (__Pyx_PyFastCFunction_Check(__pyx_t_11)) {
+      PyObject *__pyx_temp[2] = {__pyx_t_13, __pyx_t_8};
+      __pyx_t_9 = __Pyx_PyCFunction_FastCall(__pyx_t_11, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 25, __pyx_L1_error)
+      __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
+      __Pyx_GOTREF(__pyx_t_9);
+      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     } else
     #endif
     {
-      __pyx_t_15 = PyTuple_New(1+1); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 23, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_15);
-      __Pyx_GIVEREF(__pyx_t_14); PyTuple_SET_ITEM(__pyx_t_15, 0, __pyx_t_14); __pyx_t_14 = NULL;
-      __Pyx_GIVEREF(__pyx_t_9);
-      PyTuple_SET_ITEM(__pyx_t_15, 0+1, __pyx_t_9);
-      __pyx_t_9 = 0;
-      __pyx_t_10 = __Pyx_PyObject_Call(__pyx_t_12, __pyx_t_15, NULL); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 23, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_10);
-      __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
+      __pyx_t_14 = PyTuple_New(1+1); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 25, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_14);
+      __Pyx_GIVEREF(__pyx_t_13); PyTuple_SET_ITEM(__pyx_t_14, 0, __pyx_t_13); __pyx_t_13 = NULL;
+      __Pyx_GIVEREF(__pyx_t_8);
+      PyTuple_SET_ITEM(__pyx_t_14, 0+1, __pyx_t_8);
+      __pyx_t_8 = 0;
+      __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_11, __pyx_t_14, NULL); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 25, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_9);
+      __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
     }
   }
-  __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-  if (!(likely(((__pyx_t_10) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_10, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 23, __pyx_L1_error)
-  __pyx_r = ((PyArrayObject *)__pyx_t_10);
-  __pyx_t_10 = 0;
+  __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
+  if (!(likely(((__pyx_t_9) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_9, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 25, __pyx_L1_error)
+  __pyx_r = ((PyArrayObject *)__pyx_t_9);
+  __pyx_t_9 = 0;
   goto __pyx_L0;
 
-  /* "pyhog/pyhog.pyx":18
+  /* "pyhog/feature.pyx":18
  * 
  * 
- * cpdef np.ndarray[np.float, ndim=3] hog_feature(double[:, :, :] im, int sbin=4):             # <<<<<<<<<<<<<<
- *     shape = im.shape
- *     cdef double[:, :, :] im_f = im.copy_fortran()
+ * cpdef np.ndarray[np.float, ndim=3] hog(double[:, :, :] im, int sbin=4):             # <<<<<<<<<<<<<<
+ *     cdef int rows = im.shape[0]
+ *     cdef int cols = im.shape[1]
  */
 
   /* function exit code */
   __pyx_L1_error:;
-  __PYX_XDEC_MEMVIEW(&__pyx_t_2, 1);
-  __Pyx_XDECREF(((PyObject *)__pyx_t_8));
+  __PYX_XDEC_MEMVIEW(&__pyx_t_1, 1);
+  __Pyx_XDECREF(((PyObject *)__pyx_t_7));
+  __Pyx_XDECREF(__pyx_t_8);
   __Pyx_XDECREF(__pyx_t_9);
-  __Pyx_XDECREF(__pyx_t_10);
-  __PYX_XDEC_MEMVIEW(&__pyx_t_11, 1);
-  __Pyx_XDECREF(__pyx_t_12);
-  __PYX_XDEC_MEMVIEW(&__pyx_t_13, 1);
+  __PYX_XDEC_MEMVIEW(&__pyx_t_10, 1);
+  __Pyx_XDECREF(__pyx_t_11);
+  __PYX_XDEC_MEMVIEW(&__pyx_t_12, 1);
+  __Pyx_XDECREF(__pyx_t_13);
   __Pyx_XDECREF(__pyx_t_14);
-  __Pyx_XDECREF(__pyx_t_15);
-  __Pyx_AddTraceback("pyhog.pyhog.hog_feature", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyhog.feature.hog", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __PYX_XDEC_MEMVIEW(&__pyx_v_im_f, 1);
@@ -2406,13 +2424,13 @@ static PyArrayObject *__pyx_f_5pyhog_5pyhog_hog_feature(__Pyx_memviewslice __pyx
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5pyhog_5pyhog_1hog_feature(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_5pyhog_5pyhog_1hog_feature(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_5pyhog_7feature_1hog(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_5pyhog_7feature_1hog(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   __Pyx_memviewslice __pyx_v_im = { 0, 0, { 0 }, { 0 }, { 0 } };
   int __pyx_v_sbin;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("hog_feature (wrapper)", 0);
+  __Pyx_RefNannySetupContext("hog (wrapper)", 0);
   {
     static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_im,&__pyx_n_s_sbin,0};
     PyObject* values[2] = {0,0};
@@ -2437,7 +2455,7 @@ static PyObject *__pyx_pw_5pyhog_5pyhog_1hog_feature(PyObject *__pyx_self, PyObj
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "hog_feature") < 0)) __PYX_ERR(0, 18, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "hog") < 0)) __PYX_ERR(0, 18, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -2456,30 +2474,30 @@ static PyObject *__pyx_pw_5pyhog_5pyhog_1hog_feature(PyObject *__pyx_self, PyObj
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("hog_feature", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 18, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("hog", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 18, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("pyhog.pyhog.hog_feature", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyhog.feature.hog", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyhog_5pyhog_hog_feature(__pyx_self, __pyx_v_im, __pyx_v_sbin);
+  __pyx_r = __pyx_pf_5pyhog_7feature_hog(__pyx_self, __pyx_v_im, __pyx_v_sbin);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyhog_5pyhog_hog_feature(CYTHON_UNUSED PyObject *__pyx_self, __Pyx_memviewslice __pyx_v_im, int __pyx_v_sbin) {
+static PyObject *__pyx_pf_5pyhog_7feature_hog(CYTHON_UNUSED PyObject *__pyx_self, __Pyx_memviewslice __pyx_v_im, int __pyx_v_sbin) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  struct __pyx_opt_args_5pyhog_5pyhog_hog_feature __pyx_t_2;
-  __Pyx_RefNannySetupContext("hog_feature", 0);
+  struct __pyx_opt_args_5pyhog_7feature_hog __pyx_t_2;
+  __Pyx_RefNannySetupContext("hog", 0);
   __Pyx_XDECREF(__pyx_r);
   if (unlikely(!__pyx_v_im.memview)) { __Pyx_RaiseUnboundLocalError("im"); __PYX_ERR(0, 18, __pyx_L1_error) }
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.sbin = __pyx_v_sbin;
-  __pyx_t_1 = ((PyObject *)__pyx_f_5pyhog_5pyhog_hog_feature(__pyx_v_im, 0, &__pyx_t_2)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)__pyx_f_5pyhog_7feature_hog(__pyx_v_im, 0, &__pyx_t_2)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 18, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -2488,7 +2506,7 @@ static PyObject *__pyx_pf_5pyhog_5pyhog_hog_feature(CYTHON_UNUSED PyObject *__py
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("pyhog.pyhog.hog_feature", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyhog.feature.hog", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __PYX_XDEC_MEMVIEW(&__pyx_v_im, 1);
@@ -17136,7 +17154,7 @@ static PyBufferProcs __pyx_tp_as_buffer_array = {
 
 static PyTypeObject __pyx_type___pyx_array = {
   PyVarObject_HEAD_INIT(0, 0)
-  "pyhog.pyhog.array", /*tp_name*/
+  "pyhog.feature.array", /*tp_name*/
   sizeof(struct __pyx_array_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_array, /*tp_dealloc*/
@@ -17242,7 +17260,7 @@ static PyMethodDef __pyx_methods_Enum[] = {
 
 static PyTypeObject __pyx_type___pyx_MemviewEnum = {
   PyVarObject_HEAD_INIT(0, 0)
-  "pyhog.pyhog.Enum", /*tp_name*/
+  "pyhog.feature.Enum", /*tp_name*/
   sizeof(struct __pyx_MemviewEnum_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_Enum, /*tp_dealloc*/
@@ -17490,7 +17508,7 @@ static PyBufferProcs __pyx_tp_as_buffer_memoryview = {
 
 static PyTypeObject __pyx_type___pyx_memoryview = {
   PyVarObject_HEAD_INIT(0, 0)
-  "pyhog.pyhog.memoryview", /*tp_name*/
+  "pyhog.feature.memoryview", /*tp_name*/
   sizeof(struct __pyx_memoryview_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_memoryview, /*tp_dealloc*/
@@ -17615,7 +17633,7 @@ static struct PyGetSetDef __pyx_getsets__memoryviewslice[] = {
 
 static PyTypeObject __pyx_type___pyx_memoryviewslice = {
   PyVarObject_HEAD_INIT(0, 0)
-  "pyhog.pyhog._memoryviewslice", /*tp_name*/
+  "pyhog.feature._memoryviewslice", /*tp_name*/
   sizeof(struct __pyx_memoryviewslice_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc__memoryviewslice, /*tp_dealloc*/
@@ -17680,7 +17698,7 @@ static PyTypeObject __pyx_type___pyx_memoryviewslice = {
 };
 
 static PyMethodDef __pyx_methods[] = {
-  {"hog_feature", (PyCFunction)__pyx_pw_5pyhog_5pyhog_1hog_feature, METH_VARARGS|METH_KEYWORDS, 0},
+  {"hog", (PyCFunction)__pyx_pw_5pyhog_7feature_1hog, METH_VARARGS|METH_KEYWORDS, 0},
   {0, 0, 0, 0}
 };
 
@@ -17691,7 +17709,7 @@ static struct PyModuleDef __pyx_moduledef = {
   #else
     PyModuleDef_HEAD_INIT,
   #endif
-    "pyhog",
+    "feature",
     0, /* m_doc */
     -1, /* m_size */
     __pyx_methods /* m_methods */,
@@ -18125,11 +18143,11 @@ static int __Pyx_InitGlobals(void) {
 }
 
 #if PY_MAJOR_VERSION < 3
-PyMODINIT_FUNC initpyhog(void); /*proto*/
-PyMODINIT_FUNC initpyhog(void)
+PyMODINIT_FUNC initfeature(void); /*proto*/
+PyMODINIT_FUNC initfeature(void)
 #else
-PyMODINIT_FUNC PyInit_pyhog(void); /*proto*/
-PyMODINIT_FUNC PyInit_pyhog(void)
+PyMODINIT_FUNC PyInit_feature(void); /*proto*/
+PyMODINIT_FUNC PyInit_feature(void)
 #endif
 {
   PyObject *__pyx_t_1 = NULL;
@@ -18144,7 +18162,7 @@ PyMODINIT_FUNC PyInit_pyhog(void)
           Py_FatalError("failed to import 'refnanny' module");
   }
   #endif
-  __Pyx_RefNannySetupContext("PyMODINIT_FUNC PyInit_pyhog(void)", 0);
+  __Pyx_RefNannySetupContext("PyMODINIT_FUNC PyInit_feature(void)", 0);
   if (__Pyx_check_binary_version() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_empty_tuple = PyTuple_New(0); if (unlikely(!__pyx_empty_tuple)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_empty_bytes = PyBytes_FromStringAndSize("", 0); if (unlikely(!__pyx_empty_bytes)) __PYX_ERR(0, 1, __pyx_L1_error)
@@ -18173,7 +18191,7 @@ PyMODINIT_FUNC PyInit_pyhog(void)
   #endif
   /*--- Module creation code ---*/
   #if PY_MAJOR_VERSION < 3
-  __pyx_m = Py_InitModule4("pyhog", __pyx_methods, 0, 0, PYTHON_API_VERSION); Py_XINCREF(__pyx_m);
+  __pyx_m = Py_InitModule4("feature", __pyx_methods, 0, 0, PYTHON_API_VERSION); Py_XINCREF(__pyx_m);
   #else
   __pyx_m = PyModule_Create(&__pyx_moduledef);
   #endif
@@ -18190,14 +18208,14 @@ PyMODINIT_FUNC PyInit_pyhog(void)
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_pyhog__pyhog) {
+  if (__pyx_module_is_main_pyhog__feature) {
     if (PyObject_SetAttrString(__pyx_m, "__name__", __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "pyhog.pyhog")) {
-      if (unlikely(PyDict_SetItemString(modules, "pyhog.pyhog", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "pyhog.feature")) {
+      if (unlikely(PyDict_SetItemString(modules, "pyhog.feature", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -18264,7 +18282,7 @@ PyMODINIT_FUNC PyInit_pyhog(void)
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "pyhog/pyhog.pyx":2
+  /* "pyhog/feature.pyx":2
  * cimport numpy as np
  * import numpy as np             # <<<<<<<<<<<<<<
  * from libcpp.vector cimport vector
@@ -18275,7 +18293,7 @@ PyMODINIT_FUNC PyInit_pyhog(void)
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_1) < 0) __PYX_ERR(0, 2, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "pyhog/pyhog.pyx":1
+  /* "pyhog/feature.pyx":1
  * cimport numpy as np             # <<<<<<<<<<<<<<
  * import numpy as np
  * from libcpp.vector cimport vector
@@ -18435,11 +18453,11 @@ PyMODINIT_FUNC PyInit_pyhog(void)
   __Pyx_XDECREF(__pyx_t_1);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init pyhog.pyhog", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init pyhog.feature", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_DECREF(__pyx_m); __pyx_m = 0;
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init pyhog.pyhog");
+    PyErr_SetString(PyExc_ImportError, "init pyhog.feature");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();

@@ -1,4 +1,4 @@
-#include "pyhog_impl.hpp"
+#include "hog.hpp"
 #include <memory>
 #include <algorithm>
 #include <cmath>
@@ -207,6 +207,5 @@ FeatureVector process(double* im, const int rows, const int cols, const int size
     delete[] norm;
 
     FeatureVector featureVector{feat, out[0], out[1], out[2]};
-
     return featureVector;
 }
