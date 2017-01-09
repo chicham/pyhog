@@ -66,3 +66,6 @@ test
 GPATH
 GRTAGS
 GTAGS
+pyhog/feature.cpp
+pyhog/feature.cpython-35m-x86_64-linux-gnu.so
+pyhog/feature.so
