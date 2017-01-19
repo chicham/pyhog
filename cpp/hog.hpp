@@ -13,4 +13,6 @@ public:
 };
 
 
-FeatureVector process(double* im, const int rows, const int cols, const int depth, const int sbin);
+FeatureVector process(double*, const int, const int, const int, const int);
+
+int hog_size(const int, const int);

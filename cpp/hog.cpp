@@ -28,9 +28,18 @@ double vv[9] = {0.0000,
 
 using namespace std;
 
+
+int hog_size(const int dim, const int sbin){
+    double d = (double)dim;
+    int bd = (size_t)round((double)d/(double)sbin);
+    int od = max(bd-2, 0);
+    return od;
+}
+
 // main function:
 // takes a double color image and a bin size
 // returns HOG features
+
 FeatureVector process(double* im, const int rows, const int cols, const int size, const int sbin ) {
     // in
     int dims[] = {rows, cols, size};

@@ -1,9 +1,9 @@
 
 import numpy as np
-import pyhog.feature
+from pyhog import feature, hog_size
 
 
-__all__ = ["hog_picture", "hog_feature"]
+__all__ = ["hog_picture", "hog_feature", "hog_size"]
 
 try:
     from scipy.misc import imrotate
@@ -12,7 +12,8 @@ except ImportError:
     imrotate_available = False
 
 
-hog = feature.hog
+def hog(img, sbin):
+    return feature.hog(img.astype(np.float), sbin)
 
 
 def hog_picture(w, bs=20):

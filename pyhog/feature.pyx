@@ -13,6 +13,7 @@ cdef extern from "../cpp/hog.hpp":
         int cols
         int size
     cdef FeatureVector process(double*, int, int, int, int) nogil
+    cpdef int hog_size(int, int)
 
 
 cpdef np.ndarray[np.float, ndim=3] hog(double[:, :, :] im, int sbin=4):
